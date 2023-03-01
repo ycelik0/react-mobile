@@ -1,27 +1,10 @@
 import React from "react";
-import {} from "react-native";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { SafeAreaView, StyleSheet } from "react-native";
+import colors from "./app/config/colors";
+import Root from "./app/screens/Root";
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
+function App() {
+  return <Root />;
 }
 
-const Stack = createNativeStackNavigator();
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={WelcomeScreen} />
-        <Stack.Screen name="Image" component={ViewImageScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+export default App;
