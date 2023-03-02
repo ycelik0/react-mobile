@@ -1,18 +1,27 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { SafeAreaView, View, Text, StyleSheet, Platform, StatusBar } from "react-native";
+import colors from "../../config/colors";
 
 function SignOutScreen() {
   return (
-    <View style={styles.container}>
-      <Text>Sign out</Text>
-    </View>
+    <SafeAreaView style={styles.outerContainer}>
+      <View style={styles.innerContainer}>
+        <Text style={styles.text}>Sign out</Text>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  outerContainer: {
+    backgroundColor: colors.white,
     flex: 1,
+  },
+  innerContainer: {
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+  text: {
+    alignSelf: "center",
   },
 });
 

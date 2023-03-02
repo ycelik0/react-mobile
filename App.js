@@ -1,10 +1,29 @@
 import React from "react";
-import { SafeAreaView, StyleSheet } from "react-native";
-import colors from "./app/config/colors";
-import Root from "./app/screens/Root";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+// Screens
+import LoadingScreen from "./app/screens/LoadingScreen";
+import SignInScreen from "./app/screens/SignInOutScreens/SignInScreen";
+import SignOutScreen from "./app/screens/SignInOutScreens/SignOutScreen";
+
+const Stack = createNativeStackNavigator();
 
 function App() {
-  return <Root />;
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="SignIn"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Loading" component={LoadingScreen} />
+        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="signout" component={SignOutScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 export default App;

@@ -1,21 +1,27 @@
 import React from "react";
-import { View, Text, StyleSheet, Platform, StatusBar } from "react-native";
+import { SafeAreaView, View, Text, StyleSheet, Platform, StatusBar } from "react-native";
 import colors from "../../config/colors";
 
 function SignInScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Sign in</Text>
-    </View>
+    <SafeAreaView style={styles.outerContainer}>
+      <View style={styles.innerContainer}>
+        <Text style={styles.text}>Sign in</Text>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  outerContainer: {
+    backgroundColor: colors.white,
+    flex: 1,
+  },
+  innerContainer: {
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   text: {
-    textAlign: "center"
+    alignSelf: "center",
   },
 });
 
