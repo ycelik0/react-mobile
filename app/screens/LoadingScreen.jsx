@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-// Components
-import { SafeAreaView, View, Text, StyleSheet, Image } from "react-native";
-import * as Progress from "react-native-progress";
 // Assets
 import colors from "../config/colors";
 import logo from "../assets/images/orthofoodie_logo.png";
+// Components
+import { SafeAreaView, View, Text, StyleSheet, Image } from "react-native";
+import * as Progress from "react-native-progress";
 
 function LoadingScreen({ navigation }) {
   const [progressAmount, setProgressAmount] = useState(0);
 
   if (progressAmount >= 1) {
-    navigation.navigate('SignIn')
+    navigation.navigate("SignIn");
   }
 
   return (
