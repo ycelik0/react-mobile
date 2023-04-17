@@ -1,12 +1,20 @@
 import React from "react";
-import { SafeAreaView, View, Text, StyleSheet, Platform, StatusBar } from "react-native";
+import {
+  SafeAreaView,
+  View,
+  StyleSheet,
+  Platform,
+  StatusBar,
+} from "react-native";
+// Assets
 import colors from "../../config/colors";
+// Components
+import Text from "../../components/CustomText";
 
-function SignInScreen() {
+function ForgotPasswordScreen() {
   return (
     <SafeAreaView style={styles.outerContainer}>
       <View style={styles.innerContainer}>
-        <Text style={styles.text}>Sign in</Text>
       </View>
     </SafeAreaView>
   );
@@ -20,9 +28,6 @@ const styles = StyleSheet.create({
   innerContainer: {
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
-  text: {
-    alignSelf: "center",
-  },
 });
 
-export default SignInScreen;
+export default ForgotPasswordScreen;
